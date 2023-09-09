@@ -1,18 +1,11 @@
-# Modify the following action metadata according to the specification of your composite action.
-# Learn more: https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions
-
-name: Mkdir Action
+name: Setup Poetry
 author: Alfi Maulana
-description: Create a new directory
+description: Set up a specific version of Poetry
 branding:
   color: black
-  icon: folder-plus
-inputs:
-  name:
-    description: Name of the directory to create
-    required: true
+  icon: terminal
 runs:
   using: composite
   steps:
     - shell: bash
-      run: mkdir ${{ inputs.name }}
+      run: pipx install poetry
