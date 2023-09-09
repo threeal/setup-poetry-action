@@ -15,18 +15,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.0.0
 
-      # Modify the following steps for testing your composite action.
-      # Learn more: https://docs.github.com/en/actions/automating-builds-and-tests
-
-      - name: Test directory should not exist
+      - name: Poetry should not be available
         shell: bash
-        run: "! test -d dir"
+        run: "! poetry --version"
 
-      - name: Create test directory
+      - name: Setup Poetry
         uses: ./
-        with:
-          name: dir
 
-      - name: Test directory should exist
+      - name: Poetry should be available
         shell: bash
-        run: test -d dir
+        run: poetry --version
