@@ -29,3 +29,12 @@ jobs:
       - name: Poetry version should be correct
         shell: bash
         run: test "$(poetry --version)" == 'Poetry (version 1.6.1)'
+
+      - name: Setup Poetry with a specific version
+        uses: ./
+        with:
+          version: 1.5.1
+
+      - name: Poetry version should be correct
+        shell: bash
+        run: test "$(poetry --version)" == 'Poetry (version 1.5.1)'
