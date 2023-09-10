@@ -12,7 +12,23 @@ inputs:
 runs:
   using: composite
   steps:
+    - id: pipx
+      shell: bash
+      run: |
+        echo "version=$(pipx --version)" >> $GITHUB_OUTPUT
+        echo "bin_dir=$(pipx environment -v PIPX_BIN_DIR)" >> $GITHUB_OUTPUT
+        echo "local_venvs=$(pipx environment -v PIPX_LOCAL_VENVS)" >> $GITHUB_OUTPUT
+
+    - id: cache
+      uses: actions/cache@v3.3.1
+      with:
+        path: |
+          ${{ steps.pipx.outputs.bin_dir }}/poetry*
+          ${{ steps.pipx.outputs.local_venvs }}/poetry
+        key: pipx-${{ steps.pipx.outputs.version }}-${{ runner.os }}-poetry-${{ inputs.version }}
+
     - shell: bash
+      if: steps.cache.outputs.cache-hit != 'true'
       run: |
         if [ '${{ inputs.version }}' == latest ]; then
           pipx install poetry --force
