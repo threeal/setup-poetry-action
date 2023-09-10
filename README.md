@@ -14,9 +14,9 @@ To get started with the Setup Poetry Action, you can refer to the [action.yaml](
 
 Here are the available input parameters for the Setup Poetry Action:
 
-| Name | Type | Description |
-| --- | --- | --- |
-| `version` | Version number or `latest` | Specify the version of Poetry you want to set up using this action. You can refer to the [Poetry release history](https://pypi.org/project/poetry/#history) for information on the versions available for setup. |
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `version` | Version number or `latest` | `latest` | Specify the version of Poetry to be set up using this action. You can refer to the [Poetry release history](https://pypi.org/project/poetry/#history) for information about the available versions for setup. |
 
 ### Examples
 
