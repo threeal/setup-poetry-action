@@ -18,6 +18,30 @@ Here are the available input parameters for the Setup Poetry Action:
 | --- | --- | --- |
 | `version` | Version number or `latest` | Specify the version of Poetry you want to set up using this action. You can refer to the [Poetry release history](https://pypi.org/project/poetry/#history) for information on the versions available for setup. |
 
+### Example
+
+Here's an example of how to use the Setup Poetry Action to set up Poetry for installing the dependencies of a Python project in your GitHub Actions workflow:
+
+```yaml
+name: Python CI
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.0.0
+
+      - name: Setup Poetry
+        uses: threeal/setup-poetry-action@main
+
+      - name: Install Dependencies
+        run: poetry install
+
+      # Add more steps as needed for your workflow
+```
+
 ## License
 
 This project is licensed under the terms of the [MIT License](./LICENSE).
