@@ -6,13 +6,18 @@ branding:
   icon: terminal
 inputs:
   version:
-    description: Poetry version to be set up
+    description: The Poetry version to be set up.
     required: false
     default: latest
+  cache:
+    description: Use caching during Poetry installation.
+    required: false
+    default: true
 runs:
   using: composite
   steps:
     - id: pipx
+      if: inputs.cache == 'true'
       shell: bash
       run: |
         echo "version=$(pipx --version)" >> $GITHUB_OUTPUT
@@ -20,6 +25,7 @@ runs:
         echo "local_venvs=$(pipx environment -v PIPX_LOCAL_VENVS)" >> $GITHUB_OUTPUT
 
     - id: cache
+      if: inputs.cache == 'true'
       uses: actions/cache@v3.3.1
       with:
         path: |
@@ -28,7 +34,7 @@ runs:
         key: pipx-${{ steps.pipx.outputs.version }}-${{ runner.os }}-poetry-${{ inputs.version }}
 
     - shell: bash
-      if: steps.cache.outputs.cache-hit != 'true'
+      if: inputs.cache != 'true' || steps.cache.outputs.cache-hit != 'true'
       run: |
         if [ '${{ inputs.version }}' == latest ]; then
           pipx install poetry --force

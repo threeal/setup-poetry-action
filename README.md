@@ -17,6 +17,7 @@ Here are the available input parameters for the Setup Poetry Action:
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
 | `version` | Version number or `latest` | `latest` | Specify the version of Poetry to be set up using this action. You can refer to the [Poetry release history](https://pypi.org/project/poetry/#history) for information about the available versions for setup. |
+| `cache` | `true` or `false` | `true` | Indicates whether to use caching during Poetry installation. |
 
 ### Examples
 
