@@ -10,6 +10,14 @@ The Setup Poetry Action is a [GitHub Action](https://github.com/features/actions
 
 To get started with the Setup Poetry Action, you can refer to the [action.yaml](./action.yaml) file for detailed configuration options. Additionally, if you are new to GitHub Actions, you can explore the [GitHub Actions guide](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions) for a comprehensive overview.
 
+### Inputs
+
+Here are the available input parameters for the Setup Poetry Action:
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `version` | Version number or `latest` | Specify the version of Poetry you want to set up using this action. You can refer to the [Poetry release history](https://pypi.org/project/poetry/#history) for information on the versions available for setup. |
+
 ## License
 
 This project is licensed under the terms of the [MIT License](./LICENSE).
