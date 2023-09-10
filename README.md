@@ -78,6 +78,17 @@ To set both the Python and Poetry versions, you can combine the Setup Poetry Act
     version: 1.5.1
 ```
 
+#### Disable Caching
+
+By default, caching is enabled. To disable caching, set the `cache` input parameter to `false` as shown below:
+
+```yaml
+- name: Setup Poetry without caching
+  uses: threeal/setup-poetry-action@main
+  with:
+    cache: false
+```
+
 ## License
 
 This project is licensed under the terms of the [MIT License](./LICENSE).
