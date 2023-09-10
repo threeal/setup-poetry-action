@@ -6,6 +6,10 @@
 
 The Setup Poetry Action is a [GitHub Action](https://github.com/features/actions) designed to streamline the setup of [Poetry](https://python-poetry.org/), a powerful dependency and packaging manager for [Python](https://www.python.org/) projects. This action allows you to easily configure and use a specific version of Poetry within your GitHub Actions workflow, enabling you to build and test your Python project seamlessly.
 
+## Usage
+
+To get started with the Setup Poetry Action, you can refer to the [action.yaml](./action.yaml) file for detailed configuration options. Additionally, if you are new to GitHub Actions, you can explore the [GitHub Actions guide](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions) for a comprehensive overview.
+
 ## License
 
 This project is licensed under the terms of the [MIT License](./LICENSE).
