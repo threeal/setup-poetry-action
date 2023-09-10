@@ -15,7 +15,7 @@ runs:
     - shell: bash
       run: |
         if [ '${{ inputs.version }}' == latest ]; then
-          pipx install poetry
+          pipx install poetry --force
         else
-          pipx install poetry==${{ inputs.version }}
+          pipx install poetry==${{ inputs.version }} --force
         fi
