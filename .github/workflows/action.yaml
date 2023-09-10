@@ -17,11 +17,24 @@ jobs:
 
       - name: Poetry should not be available
         shell: bash
-        run: "! poetry --version"
+        run: "! which poetry"
 
       - name: Setup Poetry
         uses: ./
 
       - name: Poetry should be available
         shell: bash
-        run: poetry --version
+        run: which poetry
+
+      - name: Poetry version should be correct
+        shell: bash
+        run: test "$(poetry --version)" == 'Poetry (version 1.6.1)'
+
+      - name: Setup Poetry with a specific version
+        uses: ./
+        with:
+          version: 1.5.1
+
+      - name: Poetry version should be correct
+        shell: bash
+        run: test "$(poetry --version)" == 'Poetry (version 1.5.1)'

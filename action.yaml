@@ -4,8 +4,18 @@ description: Set up a specific version of Poetry
 branding:
   color: black
   icon: terminal
+inputs:
+  version:
+    description: Poetry version to be set up
+    required: false
+    default: latest
 runs:
   using: composite
   steps:
     - shell: bash
-      run: pipx install poetry
+      run: |
+        if [ '${{ inputs.version }}' == latest ]; then
+          pipx install poetry --force
+        else
+          pipx install poetry==${{ inputs.version }} --force
+        fi
