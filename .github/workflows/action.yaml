@@ -19,7 +19,7 @@ jobs:
         shell: bash
         run: "! which poetry"
 
-      - name: Setup Poetry
+      - name: Setup Poetry with caching
         uses: ./
 
       - name: Poetry should be available
@@ -34,7 +34,17 @@ jobs:
         uses: ./
         with:
           version: 1.5.1
+          cache: false
 
       - name: Poetry version should be correct
         shell: bash
         run: test "$(poetry --version)" == 'Poetry (version 1.5.1)'
+
+      - name: Setup Poetry
+        uses: ./
+        with:
+          cache: false
+
+      - name: Poetry version should be correct
+        shell: bash
+        run: test "$(poetry --version)" == 'Poetry (version 1.6.1)'
