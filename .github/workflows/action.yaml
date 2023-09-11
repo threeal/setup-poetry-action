@@ -6,6 +6,7 @@ on:
     branches: [main]
 jobs:
   test:
+    name: Test
     runs-on: ${{ matrix.os }}-latest
     strategy:
       fail-fast: false
