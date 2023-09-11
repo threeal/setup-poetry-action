@@ -37,6 +37,7 @@ on:
   push:
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -45,7 +46,7 @@ jobs:
       - name: Setup Poetry
         uses: threeal/setup-poetry-action@v1.0.0
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: poetry install
 
       # Add more steps as needed for your workflow
