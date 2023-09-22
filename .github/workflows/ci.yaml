@@ -1,4 +1,4 @@
-name: Action
+name: CI
 on:
   workflow_dispatch:
   pull_request:
