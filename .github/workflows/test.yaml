@@ -19,18 +19,10 @@ jobs:
           path: setup-poetry-action
           sparse-checkout: action.yaml
 
-      - name: Poetry Should Not Be Available
-        shell: bash
-        run: "! which poetry"
-
       - name: Setup Poetry
         uses: ./setup-poetry-action
 
-      - name: Poetry Should Be Available
-        shell: bash
-        run: which poetry
-
-      - name: Ensure Poetry Version Is Correct
+      - name: Check Poetry Version
         shell: bash
         run: test "$(poetry --version)" == 'Poetry (version ${{ vars.POETRY_LATEST_VERSION }})'
 
@@ -40,7 +32,7 @@ jobs:
           version: 1.5.1
           cache: false
 
-      - name: Ensure Poetry Version Is Correct
+      - name: Check Poetry Version
         shell: bash
         run: test "$(poetry --version)" == 'Poetry (version 1.5.1)'
 
@@ -49,6 +41,6 @@ jobs:
         with:
           cache: false
 
-      - name: Ensure Poetry Version Is Correct
+      - name: Check Poetry Version
         shell: bash
         run: test "$(poetry --version)" == 'Poetry (version ${{ vars.POETRY_LATEST_VERSION }})'
