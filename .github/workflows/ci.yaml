@@ -15,13 +15,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+        with:
+          path: setup-poetry-action
 
       - name: Poetry should not be available
         shell: bash
         run: "! which poetry"
 
       - name: Setup Poetry with caching
-        uses: ./
+        uses: ./setup-poetry-action
 
       - name: Poetry should be available
         shell: bash
@@ -32,7 +34,7 @@ jobs:
         run: test "$(poetry --version)" == 'Poetry (version ${{ vars.POETRY_LATEST_VERSION }})'
 
       - name: Setup Poetry with a specific version
-        uses: ./
+        uses: ./setup-poetry-action
         with:
           version: 1.5.1
           cache: false
@@ -42,7 +44,7 @@ jobs:
         run: test "$(poetry --version)" == 'Poetry (version 1.5.1)'
 
       - name: Setup Poetry
-        uses: ./
+        uses: ./setup-poetry-action
         with:
           cache: false
 
