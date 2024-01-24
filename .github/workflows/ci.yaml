@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@v4.1.1
         with:
           path: setup-poetry-action
+          sparse-checkout: action.yaml
 
       - name: Poetry should not be available
         shell: bash
