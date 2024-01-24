@@ -1,12 +1,12 @@
-name: CI
+name: Test
 on:
   workflow_dispatch:
   pull_request:
   push:
     branches: [main]
 jobs:
-  test:
-    name: Test
+  test-action:
+    name: Test Action
     runs-on: ${{ matrix.os }}-latest
     strategy:
       fail-fast: false
