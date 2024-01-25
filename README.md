@@ -69,7 +69,7 @@ To set both the Python and Poetry versions, you can combine the Setup Poetry Act
 
 ```yaml
 - name: Setup Python
-  uses: actions/setup-python@v4.7.0
+  uses: actions/setup-python@v5.0.0
   with:
     python-version: 3.11
 
