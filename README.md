@@ -41,10 +41,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.0.0
+        uses: actions/checkout@v4.1.1
 
       - name: Setup Poetry
-        uses: threeal/setup-poetry-action@v1.0.0
+        uses: threeal/setup-poetry-action@v1.1.0
 
       - name: Install dependencies
         run: poetry install
@@ -58,7 +58,7 @@ You can specify the Poetry version to be used by providing it as an input parame
 
 ```yaml
 - name: Setup Poetry
-  uses: threeal/setup-poetry-action@v1.0.0
+  uses: threeal/setup-poetry-action@v1.1.0
   with:
     version: 1.5.1
 ```
@@ -69,12 +69,12 @@ To set both the Python and Poetry versions, you can combine the Setup Poetry Act
 
 ```yaml
 - name: Setup Python
-  uses: actions/setup-python@v4.7.0
+  uses: actions/setup-python@v5.0.0
   with:
     python-version: 3.11
 
 - name: Setup Poetry
-  uses: threeal/setup-poetry-action@v1.0.0
+  uses: threeal/setup-poetry-action@v1.1.0
   with:
     version: 1.5.1
 ```
@@ -85,7 +85,7 @@ By default, caching is enabled. To disable caching, set the `cache` input parame
 
 ```yaml
 - name: Setup Poetry without caching
-  uses: threeal/setup-poetry-action@v1.0.0
+  uses: threeal/setup-poetry-action@v1.1.0
   with:
     cache: false
 ```
