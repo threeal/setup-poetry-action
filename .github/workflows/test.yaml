@@ -19,20 +19,22 @@ jobs:
           path: setup-poetry-action
           sparse-checkout: action.yaml
 
-      - name: Poetry Should Not Be Available
-        shell: bash
-        run: "! which poetry"
-
       - name: Setup Poetry
         uses: ./setup-poetry-action
 
-      - name: Poetry Should Be Available
-        shell: bash
-        run: which poetry
-
-      - name: Ensure Poetry Version Is Correct
+      - name: Check Poetry Version
         shell: bash
         run: test "$(poetry --version)" == 'Poetry (version ${{ vars.POETRY_LATEST_VERSION }})'
+
+  test-action-with-specific-poetry-version:
+    name: Test Action With Specific Poetry Version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+        with:
+          path: setup-poetry-action
+          sparse-checkout: action.yaml
 
       - name: Setup Poetry With a Specific Version
         uses: ./setup-poetry-action
@@ -40,15 +42,25 @@ jobs:
           version: 1.5.1
           cache: false
 
-      - name: Ensure Poetry Version Is Correct
+      - name: Check Poetry Version
         shell: bash
         run: test "$(poetry --version)" == 'Poetry (version 1.5.1)'
+
+  test-action-without-cache:
+    name: Test Action Without Cache
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+        with:
+          path: setup-poetry-action
+          sparse-checkout: action.yaml
 
       - name: Setup Poetry Without Cache
         uses: ./setup-poetry-action
         with:
           cache: false
 
-      - name: Ensure Poetry Version Is Correct
+      - name: Check Poetry Version
         shell: bash
         run: test "$(poetry --version)" == 'Poetry (version ${{ vars.POETRY_LATEST_VERSION }})'
