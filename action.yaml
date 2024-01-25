@@ -6,12 +6,10 @@ branding:
   color: black
 inputs:
   version:
-    description: The Poetry version to be set up.
-    required: false
+    description: The Poetry version to be set up
     default: latest
   cache:
-    description: Use caching during Poetry installation.
-    required: false
+    description: Use caching during Poetry installation
     default: true
 runs:
   using: composite
