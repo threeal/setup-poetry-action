@@ -12,7 +12,7 @@ The Setup Poetry Action offers the following key features:
 
 ## Usage
 
-To get started with the Setup Poetry Action, you can refer to the [action.yaml](./action.yaml) file for detailed configuration options. Additionally, if you are new to GitHub Actions, you can explore the [GitHub Actions guide](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions) for a comprehensive overview.
+To get started with the Setup Poetry Action, you can refer to the [action.yml](./action.yml) file for detailed configuration options. Additionally, if you are new to GitHub Actions, you can explore the [GitHub Actions guide](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions) for a comprehensive overview.
 
 ### Inputs
 
