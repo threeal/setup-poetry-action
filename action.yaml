@@ -20,6 +20,7 @@ runs:
       run: |
         echo "version=$(pipx --version)" >> $GITHUB_OUTPUT
         echo "bin_dir=$(pipx environment -v PIPX_BIN_DIR)" >> $GITHUB_OUTPUT
+        pipx environment
         echo "local_venvs=$(pipx environment -v PIPX_LOCAL_VENVS)" >> $GITHUB_OUTPUT
 
     - id: cache
