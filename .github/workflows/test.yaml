@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4.1.2
         with:
           path: setup-poetry-action
-          sparse-checkout: action.yaml
+          sparse-checkout: action.yml
           sparse-checkout-cone-mode: false
 
       - name: Setup Poetry
@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v4.1.2
         with:
           path: setup-poetry-action
-          sparse-checkout: action.yaml
+          sparse-checkout: action.yml
           sparse-checkout-cone-mode: false
 
       - name: Setup Poetry With a Specific Version
@@ -56,7 +56,7 @@ jobs:
         uses: actions/checkout@v4.1.2
         with:
           path: setup-poetry-action
-          sparse-checkout: action.yaml
+          sparse-checkout: action.yml
           sparse-checkout-cone-mode: false
 
       - name: Setup Poetry Without Cache
