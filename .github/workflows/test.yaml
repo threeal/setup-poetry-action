@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-22.04, macos-14, windows-2022]
+        os: [ubuntu-24.04, macos-14, windows-2022]
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -29,7 +29,7 @@ jobs:
 
   test-action-with-specific-poetry-version:
     name: Test Action With Specific Poetry Version
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -50,7 +50,7 @@ jobs:
 
   test-action-without-cache:
     name: Test Action Without Cache
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
